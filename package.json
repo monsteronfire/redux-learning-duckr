@@ -1,0 +1,20 @@
+{
+  "name": "duckr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "actions.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monsteronfire/redux-learning-duckr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/monsteronfire/redux-learning-duckr/issues"
+  },
+  "homepage": "https://github.com/monsteronfire/redux-learning-duckr#readme"
+}
