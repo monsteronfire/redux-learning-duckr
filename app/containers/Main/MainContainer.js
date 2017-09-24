@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
 class MainContainer extends React.Component {
-  render() {
+  render () {
     return (
       <p>Hello world</p>
     )
   }
 }
 
-export default MainContainer;
+export default MainContainer
