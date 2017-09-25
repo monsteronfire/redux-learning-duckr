@@ -1,3 +1,4 @@
+import webpack from 'webpack';
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
@@ -13,8 +14,7 @@ const PATHS = {
   build: path.join(__dirname, 'dist')
 };
 
-module.exports = {
-  devtool: 'cheap-module-inline-source-map',
+const base = {
   entry: [
     PATHS.app,
   ],
@@ -28,5 +28,28 @@ module.exports = {
       { test: /\.css$/, loader: [ 'style-loader!css-loader' ] }
     ]
   },
+};
+
+const LAUNCH_COMMAND = process.env.npm_lifecycle_event;
+
+const isProduction = LAUNCH_COMMAND === 'production';
+
+const productionPlugin = new webpack.DefinePlugin({
+  'process.env': {
+    NODE_ENV: JSON.stringify('production')
+  }
+});
+
+const developmentConfig = {
+  devtool: 'cheap-module-inline-source-map',
   plugins: [HtmlWebpackPluginConfig]
 };
+
+const productionConfig = {
+  devtool: 'cheap-module-source-map',
+  plugins: [HtmlWebpackPluginConfig, productionPlugin]
+};
+
+export default Object.assign({}, base,
+  isProduction === true ?  productionConfig : developmentConfig
+);
