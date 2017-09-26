@@ -28,6 +28,11 @@ const base = {
       { test: /\.css$/, loader: 'style-loader!css-loader?sourceMap&modules&localIdentName=[name]__[local]___[hash:base64:5]' }
     ]
   },
+  //resolve: {
+    //modules: [
+      //path.resolve(__dirname, './app')
+    //]
+  //},
 };
 
 const LAUNCH_COMMAND = process.env.npm_lifecycle_event;
