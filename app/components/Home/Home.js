@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import {} from './styles.css';
+import { container, title, slogan } from './styles.css';
 
 function Home (props) {
   return (
